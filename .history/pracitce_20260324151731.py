@@ -265,7 +265,5 @@ while running:
     draw_hud(aabb_hit, circle_hit, obb_hit, dist, sum_r, rot_spd)
     pygame.display.flip()
 
-    
-
 pygame.quit()
 sys.exit()
