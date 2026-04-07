@@ -42,7 +42,10 @@ def load_sprite(path, size=(CELL, CELL)):
         return None  # 없으면 None → 기존 사각형으로 fallback
 
 HEAD_IMG  = load_sprite("player.png")   # 머리
-BODY_IMG  = load_sprite("body.png")     # 몸통
+BODY_IMG  = load_sprite("player.png")   # 몸통 (같은 파일 써도 됨)
+# 파일을 따로 쓰고 싶으면:
+# HEAD_IMG  = load_sprite("head.png")
+# BODY_IMG  = load_sprite("body.png")
 
 # 방향 → 회전 각도 (pygame.transform.rotate는 반시계 방향)
 # 기본 이미지가 '오른쪽'을 향한다고 가정
@@ -187,7 +190,7 @@ def main():
         screen.fill(GRAY)
         draw_grid()
         pygame.draw.rect(screen, RED, (*food, CELL, CELL))
-        draw_snake(snake, direction)
+        draw_snake(snake, direction)   # ← direction 추가
         draw_hud(score, level)
         pygame.display.flip()
 
