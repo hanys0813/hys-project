@@ -49,8 +49,8 @@ BODY_IMG  = load_sprite("body.png")     # 몸통
 # ──────────────────────────────────────────
 pygame.mixer.init()
 try:
-    EAT_SOUND = pygame.mixer.Sound("eat.wav")
-except (FileNotFoundError, pygame.error):
+    EAT_SOUND = pygame.mixer.Sound("eat.m4a")
+except FileNotFoundError:
     EAT_SOUND = None
 
 # 방향 → 회전 각도 (pygame.transform.rotate는 반시계 방향)
